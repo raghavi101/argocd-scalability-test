@@ -2,6 +2,7 @@
 
 source ./env.sh
 oc apply -f openshift-gitops.yaml
+sleep 15
 oc  wait --for=condition=Ready=true -n openshift-gitops pod/openshift-gitops-application-controller-0
 
 
